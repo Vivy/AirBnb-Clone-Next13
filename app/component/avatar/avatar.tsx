@@ -2,18 +2,18 @@
 
 import Image from 'next/image';
 
-interface AvatarType {
-  src: string | null | undefined;
-}
-
-const Avatar: React.FC<AvatarType> = ({ src }) => {
+// interface AvatarType {
+//   src: string | null | undefined;
+// }
+// : React.FC<AvatarType>
+const Avatar = () => {
   return (
     <Image
       className='rounded-full'
       height='30'
       width='30'
       alt='Avatar'
-      src={src || '/images/placeholder.jpg'}
+      src={'/images/placeholder.jpg'}
     />
   );
 };

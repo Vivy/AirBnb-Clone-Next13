@@ -4,8 +4,13 @@ import Container from '../container/container';
 import Logo from '../logo/logo';
 import Search from '../search/search';
 import UserMenu from '../usermenu/usermenu';
+import { User } from '@prisma/client';
 
-const Navbar = () => {
+interface NavbarType {
+  currentUser?: User | null;
+}
+
+const Navbar: React.FC<NavbarType> = ({ currentUser }) => {
   return (
     <div className='fixed w-full bg-white z-10 shadow-sm'>
       <div className='py-4 border-b-[1px]'>
@@ -21,7 +26,7 @@ const Navbar = () => {
           >
             <Logo />
             <Search />
-            <UserMenu />
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
