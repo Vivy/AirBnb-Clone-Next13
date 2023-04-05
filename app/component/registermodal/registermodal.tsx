@@ -10,6 +10,8 @@ import { error } from 'console';
 import Modal from '../modal/modal';
 import Heading from '../heading/heading';
 import Input from '../input/input';
+import { toast } from 'react-hot-toast';
+import Button from '../button/button';
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -36,7 +38,9 @@ const RegisterModal = () => {
         registerModal.onClose();
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(
+          'Something went Wrong Apparently because u dont have a fucking api'
+        );
       })
       .finally(() => {
         setIsLoading(false);
@@ -74,6 +78,46 @@ const RegisterModal = () => {
     </div>
   );
 
+  const footerContent = (
+    <div className='flex flex-col gap-4 mt-3'>
+      <hr />
+      <Button
+        outline
+        label='Continue with Google'
+        icon={FcGoogle}
+        onClick={() => {}}
+      />
+      <Button
+        outline
+        label='Continue with Github'
+        icon={AiFillGithub}
+        onClick={() => {}}
+      />
+      <div
+        className='
+        text-neutral-500
+        text-center
+        mt-4
+        font-light
+      '
+      >
+        <div className='justify-center flex flex-row items-center gap-2'>
+          <div>Already have an account</div>
+          <div
+            onClick={registerModal.onClose}
+            className='
+            text-neutral-800
+            cursor-pointer
+            hover:underline
+          '
+          >
+            Login
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Modal
       disable={isLoading}
@@ -83,6 +127,7 @@ const RegisterModal = () => {
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
+      footer={footerContent}
     />
   );
 };

@@ -173,6 +173,7 @@ const Modal: React.FC<ModalType> = ({
                     onClick={handleSubmit}
                   />
                 </div>
+                {footer}
               </div>
             </div>
           </div>
