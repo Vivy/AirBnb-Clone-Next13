@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 
-interface AvatarStyle {
+interface AvatarType {
   src: string | null | undefined;
 }
 
-const Avatar: React.FC<AvatarStyle> = ({ src }) => {
+const Avatar: React.FC<AvatarType> = ({ src }) => {
   return (
     <Image
       className='rounded-full'

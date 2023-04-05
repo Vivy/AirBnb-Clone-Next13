@@ -1,10 +1,10 @@
 'use client';
 
-interface ContainerStyle {
+interface ContainerType {
   children: React.ReactNode;
 }
 
-const Container: React.FC<ContainerStyle> = ({ children }) => {
+const Container: React.FC<ContainerType> = ({ children }) => {
   return (
     <div
       className=' 

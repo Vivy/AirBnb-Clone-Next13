@@ -1,11 +1,11 @@
 'use client';
 
-interface MenuItemStyle {
+interface MenuItemType {
   onClick: () => void;
   label: string;
 }
 
-const MenuItem: React.FC<MenuItemStyle> = ({ label, onClick }) => {
+const MenuItem: React.FC<MenuItemType> = ({ label, onClick }) => {
   return (
     <div
       onClick={onClick}
