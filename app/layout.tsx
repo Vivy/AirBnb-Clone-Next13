@@ -3,7 +3,7 @@ import { Nunito } from 'next/font/google';
 import './globals.css';
 import Navbar from './component/navbar/navbar';
 import ClientOnly from './component/clientonly/clientonly';
-import Modal from './component/modal/modal';
+import RegisterModal from './component/registermodal/registermodal';
 
 export const metadata = {
   title: 'AirBnB clone',
@@ -19,7 +19,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang='en'>
       <body className={font.className}>
         <ClientOnly>
-          <Modal actionLabel='Submit' isOpen />
+          <RegisterModal />
           <Navbar />
         </ClientOnly>
         {children}
