@@ -1,13 +1,13 @@
 'use client';
 
+import { SafeUser } from '@/app/types';
 import Container from '../container/container';
 import Logo from '../logo/logo';
 import Search from '../search/search';
 import UserMenu from '../usermenu/usermenu';
-import { User } from '@prisma/client';
 
 interface NavbarType {
-  currentUser?: User | null;
+  currentUser?: SafeUser | null;
 }
 
 const Navbar: React.FC<NavbarType> = ({ currentUser }) => {
