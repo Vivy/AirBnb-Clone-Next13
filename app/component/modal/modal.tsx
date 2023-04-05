@@ -14,7 +14,7 @@ interface ModalType {
   actionLabel: string;
   disable?: boolean;
   secondaryAction?: () => void;
-  secondaryLabel?: string;
+  secondaryActionLabel?: string;
 }
 
 const Modal: React.FC<ModalType> = ({
@@ -26,7 +26,7 @@ const Modal: React.FC<ModalType> = ({
   disable,
   footer,
   secondaryAction,
-  secondaryLabel,
+  secondaryActionLabel,
   title,
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
@@ -159,7 +159,19 @@ const Modal: React.FC<ModalType> = ({
                   w-full
                 '
                 >
-                  <Button label='My Button' />
+                  {secondaryAction && secondaryActionLabel && (
+                    <Button
+                      outline
+                      disabled={disable}
+                      label={secondaryActionLabel}
+                      onClick={handleSecondaryAction}
+                    />
+                  )}
+                  <Button
+                    disabled={disable}
+                    label={actionLabel}
+                    onClick={handleSubmit}
+                  />
                 </div>
               </div>
             </div>

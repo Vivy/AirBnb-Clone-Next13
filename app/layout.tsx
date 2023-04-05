@@ -19,7 +19,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang='en'>
       <body className={font.className}>
         <ClientOnly>
-          <Modal isOpen />
+          <Modal actionLabel='Submit' isOpen />
           <Navbar />
         </ClientOnly>
         {children}
