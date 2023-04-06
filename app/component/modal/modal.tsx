@@ -69,6 +69,7 @@ const Modal: React.FC<ModalType> = ({
   return (
     <>
       <div
+        datatype='Test'
         className='
           justify-center 
           items-center 
