@@ -8,6 +8,7 @@ import LoginModal from './component/loginmodal/loginmodal';
 import RentModal from './component/rentmodal/rentmodal';
 import ToasterProvider from './component/provider/toasterprovider';
 import getCurrentUser from './actions/getcurrentuser';
+import SearchModal from './component/searchmodal/searchmodal';
 
 export const metadata = {
   title: 'AirBnB clone',
@@ -26,6 +27,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
+          <SearchModal />
           <RentModal />
           <LoginModal />
           <RegisterModal />
